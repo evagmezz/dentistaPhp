@@ -34,5 +34,5 @@ $result = $conn->query("SELECT n.titulo, n.imagen, n.texto, n.fecha, u.nombre FR
 </div>
 <script src="script.js"></script>
 </body>
-<?php include("footer.php"); ?>
 </html>
+<?php include("footer.php"); ?>

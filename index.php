@@ -52,5 +52,6 @@ $result = $conn->query("SELECT titulo, imagen, texto, fecha FROM noticias ORDER 
     </div>
 </div>
 </body>
-<?php include("footer.php"); ?>
 </html>
+<?php include("footer.php"); ?>
+

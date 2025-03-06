@@ -255,7 +255,8 @@ footer {
     border-radius: 50%;
     font-size: 24px;
     cursor: pointer;
-    border: 1px solid #0e3760;}
+    border: 1px solid #0e3760;
+}
 
 .add-news-btn:hover {
     background-color: #0e3760;
@@ -434,38 +435,182 @@ footer {
 }
 
 /* perfil */
- .profile-card {
-     max-width: 600px;
-     margin: 20px auto;
-     border: 1px solid #ccc;
-     border-radius: 10px;
-     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-     background-color: #fff;
- }
+.profile-card {
+    max-width: 700px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 20px;
+}
+
 .profile-card h2 {
     text-align: center;
     margin-bottom: 20px;
 }
-.profile-card label {
-    display: block;
-    margin: 10px 0 5px;
+
+.profile-card form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
+
+.profile-card .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-card label {
+    margin-bottom: 5px;
+}
+
 .profile-card input, .profile-card textarea, .profile-card select {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
+.profile-card textarea {
+    grid-column: span 3;
+}
+
 .profile-card button {
-    width: 100%;
+    width: 50%;
     padding: 10px;
     background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    grid-column: span 3;
+    margin: 0 auto;
+    display: block;
 }
+
 .profile-card button:hover {
+    background-color: #0056b3;
+}
+
+/* citaciones */
+.citaciones-page {
+    max-width: 700px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 20px;
+}
+
+.citaciones-page h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.citaciones-page form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.citaciones-page form .form-row,
+.form-container .form-row {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.citaciones-page form .form-row input,
+.citaciones-page form .form-row textarea,
+.form-container .form-row input,
+.form-container .form-row textarea {
+    flex: 1;
+    max-width: 300px;
+}
+
+.citaciones-page form button,
+.form-container form button {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.citaciones-page form button:hover,
+.form-container form button:hover {
+    background-color: #0056b3;
+}
+
+.no-citas {
+    color: gray;
+    font-style: italic;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cita-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.cita-item p {
+    margin: 8px 0;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.form-container form .form-row {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.form-container form .form-row input,
+.form-container form .form-row textarea {
+    flex: 1;
+    max-width: 300px;
+}
+
+.form-container form button {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.form-container form button:hover {
     background-color: #0056b3;
 }

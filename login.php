@@ -19,5 +19,5 @@
     <p id="message"></p>
 </div>
 </body>
-<?php include("footer.php"); ?>
 </html>
+<?php include("footer.php"); ?>
