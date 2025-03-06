@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57666034-78dd-4f37-af6c-856f0b44a283" name="Changes" comment="usuarios administración hecho">
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="57666034-78dd-4f37-af6c-856f0b44a283" name="Changes" comment="usuarios administración arreglado y citas administracion hecho">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuarios-administracion.php" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios-administracion.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +116,7 @@
       <workItem from="1740659383451" duration="2577000" />
       <workItem from="1740731017177" duration="8119000" />
       <workItem from="1741257899883" duration="114000" />
-      <workItem from="1741258175470" duration="7115000" />
+      <workItem from="1741258175470" duration="7987000" />
     </task>
     <task id="LOCAL-00001" summary="index, login, register y noticias funcionan, falta que funcione perfil por el momento">
       <option name="closed" value="true" />
@@ -144,7 +142,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741264449544</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="usuarios administración arreglado y citas administracion hecho">
+      <option name="closed" value="true" />
+      <created>1741265402976</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1741265402976</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +160,7 @@
     <MESSAGE value="index, login, register y noticias funcionan, falta que funcione perfil por el momento" />
     <MESSAGE value="perfil y citaciones funciona todo" />
     <MESSAGE value="usuarios administración hecho" />
-    <option name="LAST_COMMIT_MESSAGE" value="usuarios administración hecho" />
+    <MESSAGE value="usuarios administración arreglado y citas administracion hecho" />
+    <option name="LAST_COMMIT_MESSAGE" value="usuarios administración arreglado y citas administracion hecho" />
   </component>
 </project>

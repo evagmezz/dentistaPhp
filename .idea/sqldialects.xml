@@ -10,6 +10,7 @@
     <file url="file://$PROJECT_DIR$/login.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/login_process.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/modificar_cita.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/noticias-administracion.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/noticias.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/perfil.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/register_process.php" dialect="GenericSQL" />
