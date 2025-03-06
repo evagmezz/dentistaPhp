@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $direccion = $_POST['direccion'];
         $sexo = $_POST['sexo'];
         $usuario = $_POST['usuario'];
-        $password = password_hash($_POST['password'], PASSWORD_BCRYPT); // Hash the password
+        $password = $_POST['password'];
         $rol = $_POST['rol'];
 
         $conn->query("INSERT INTO users_data (nombre, apellidos, email, telefono, fecha_nacimiento, direccion, sexo) VALUES ('$nombre', '$apellidos', '$email', '$telefono', '$fecha_nacimiento', '$direccion', '$sexo')");
@@ -28,19 +28,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif (isset($_POST['update'])) {
         $id = $_POST['id'];
         $usuario = $_POST['usuario'];
-        $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+        $password = $_POST['password'];
         $rol = $_POST['rol'];
 
-        $conn->query("UPDATE users_login SET usuario = '$usuario', password = '$password', rol = '$rol' WHERE idUser = $id");
+        if (!empty($password)) {
+            $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+            $conn->query("UPDATE users_login SET usuario = '$usuario', password = '$hashedPassword', rol = '$rol' WHERE idUser = $id");
+        } else {
+            $conn->query("UPDATE users_login SET usuario = '$usuario', rol = '$rol' WHERE idUser = $id");
+        }
     } elseif (isset($_POST['delete'])) {
         $id = $_POST['id'];
 
         $conn->query("DELETE FROM users_login WHERE idUser = $id");
-
         $conn->query("DELETE FROM users_data WHERE idUser = $id");
     }
 }
-
 
 $result = $conn->query("SELECT * FROM users_login");
 ?>

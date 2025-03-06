@@ -19,6 +19,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 </li>
                 <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] == 'admin'): ?>
                     <li><a href="usuarios-administracion.php">Administración de Usuarios</a></li>
+                    <li><a href="citas-administracion.php">Administración de Citas</a></li>
                 <?php else : ?>
                     <li><a href="citaciones.php"
                            class="<?php echo basename($_SERVER['PHP_SELF']) == 'citaciones.php' ? 'active' : ''; ?>">Citaciones</a>
