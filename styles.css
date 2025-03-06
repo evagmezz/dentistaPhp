@@ -1,0 +1,471 @@
+/* reset de márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* estilos generales */
+body, html {
+    padding-top: 90px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    grid-template-rows: auto 1fr auto;
+}
+
+
+/* header */
+header {
+    background-color: #77a2d8;
+    color: white;
+    padding: 20px 40px;
+    border: 1px solid #0e3760;
+    border-radius: 5px;
+    margin: 2px 10px 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #0e3760;
+}
+
+.active {
+    color: #3849ba;
+}
+
+/* footer */
+footer {
+    background-color: #77a2d8;
+    border: 1px solid #0e3760;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    height: 100px;
+    margin: 20px 0 0 0;
+    border-radius: 10px;
+    color: white;
+}
+
+.social-media {
+    margin-bottom: 10px;
+}
+
+.social-media a {
+    margin: 0 10px;
+}
+
+.social-media img {
+    width: 30px;
+    height: auto;
+}
+
+/* carousel */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 10px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-item img {
+    width: 100%;
+    display: block;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel-control-prev {
+    left: 10px;
+}
+
+.carousel-control-next {
+    right: 10px;
+}
+
+/* description */
+.description {
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.description h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.description p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* news */
+.last-news {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.last-news h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.last-news a {
+    text-decoration: none;
+    color: #77a2d8;
+}
+
+.news-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.news-page {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.news-page h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.news-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+}
+
+.news-item img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.news-item h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.news-item p {
+    padding: 0 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.news-item .date {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.news-item .author {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.add-news-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #77a2d8;
+    color: white;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    border: 1px solid #0e3760;}
+
+.add-news-btn:hover {
+    background-color: #0e3760;
+}
+
+/*registro y login*/
+
+.register-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.register-page {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.register-page h2 {
+    text-align: center;
+}
+
+.register-page form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-page form input,
+.register-page form textarea,
+.register-page form select,
+.register-page form button {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.register-page form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.register-page form button:hover {
+    background-color: #0056b3;
+}
+
+.register-page p {
+    text-align: center;
+}
+
+.register-page p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register-page p a:hover {
+    text-decoration: underline;
+}
+
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.login-page {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-page h2 {
+    text-align: center;
+}
+
+.login-page form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-page form input,
+.login-page form button {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-page form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.login-page form button:hover {
+    background-color: #0056b3;
+}
+
+.login-page p {
+    text-align: center;
+}
+
+.login-page p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-page p a:hover {
+    text-decoration: underline;
+}
+
+/* create news */
+.create-news-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.create-news-page h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.create-news-page form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.create-news-page form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.create-news-page form input,
+.create-news-page form textarea,
+.create-news-page form button {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.create-news-page form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.create-news-page form button:hover {
+    background-color: #0056b3;
+}
+
+/* perfil */
+ .profile-card {
+     max-width: 600px;
+     margin: 20px auto;
+     border: 1px solid #ccc;
+     border-radius: 10px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     background-color: #fff;
+ }
+.profile-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.profile-card label {
+    display: block;
+    margin: 10px 0 5px;
+}
+.profile-card input, .profile-card textarea, .profile-card select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.profile-card button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.profile-card button:hover {
+    background-color: #0056b3;
+}
