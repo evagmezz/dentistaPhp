@@ -302,14 +302,14 @@ footer {
 }
 
 .register-page form button {
-    background-color: #007bff;
+    background-color: #77a2d8;
+    border: 1px solid #0e3760;
     color: #fff;
-    border: none;
     cursor: pointer;
 }
 
 .register-page form button:hover {
-    background-color: #0056b3;
+    background-color: #0e3760;
 }
 
 .register-page p {
@@ -361,14 +361,14 @@ footer {
 }
 
 .login-page form button {
-    background-color: #007bff;
+    background-color: #77a2d8;
+    border: 1px solid #0e3760;
     color: #fff;
-    border: none;
     cursor: pointer;
 }
 
 .login-page form button:hover {
-    background-color: #0056b3;
+    background-color: #0e3760;
 }
 
 .login-page p {
@@ -424,14 +424,14 @@ footer {
 }
 
 .create-news-page form button {
-    background-color: #007bff;
+    background-color: #77a2d8;
     color: #fff;
-    border: none;
+    border: 1px solid #0e3760;
     cursor: pointer;
 }
 
 .create-news-page form button:hover {
-    background-color: #0056b3;
+    background-color: #0e3760;
 }
 
 /* perfil */
@@ -479,9 +479,9 @@ footer {
 .profile-card button {
     width: 50%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #77a2d8;
     color: #fff;
-    border: none;
+    border: 1px solid #0e3760;
     border-radius: 5px;
     cursor: pointer;
     grid-column: span 3;
@@ -490,7 +490,7 @@ footer {
 }
 
 .profile-card button:hover {
-    background-color: #0056b3;
+    background-color: #0e3760;
 }
 
 /* citaciones */
@@ -538,9 +538,9 @@ footer {
     width: 100%;
     max-width: 300px;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #77a2d8;
     color: #fff;
-    border: none;
+    border: 1px solid #0e3760;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
@@ -548,7 +548,7 @@ footer {
 
 .citaciones-page form button:hover,
 .form-container form button:hover {
-    background-color: #0056b3;
+    background-color: #0e3760;
 }
 
 .no-citas {
@@ -603,14 +603,112 @@ footer {
     width: 100%;
     max-width: 300px;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #77a2d8;
     color: #fff;
-    border: none;
+    border: 1px solid #0e3760;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
 }
 
 .form-container form button:hover {
-    background-color: #0056b3;
+    background-color: #0e3760;
+}
+
+/* administración de usuarios */
+.admin-page {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.admin-page h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.admin-page form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.admin-page form input,
+.admin-page form textarea,
+.admin-page form select,
+.admin-page form button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.admin-page form button {
+    background-color: #77a2d8;
+    color: #fff;
+    border: 1px solid #0e3760;
+    cursor: pointer;
+}
+
+.admin-page form button:hover {
+    background-color: #0e3760;
+}
+
+.admin-page table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.admin-page table th,
+.admin-page table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.admin-page table th {
+    background-color: #77a2d8;
+    color: white;
+}
+
+.admin-page table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.admin-page table tr:hover {
+    background-color: #ddd;
+}
+
+.admin-page table form {
+    display: inline;
+}
+
+.admin-page table form input,
+.admin-page table form select,
+.admin-page table form button {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.admin-page table form button {
+    background-color: #77a2d8;
+    color: #fff;
+    border: 1px solid #0e3760;
+    cursor: pointer;
+}
+
+.admin-page table form button:hover {
+    background-color: #0e3760;
 }

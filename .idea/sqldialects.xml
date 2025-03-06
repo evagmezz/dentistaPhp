@@ -13,5 +13,6 @@
     <file url="file://$PROJECT_DIR$/perfil.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/register_process.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/solicitar_cita.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/usuarios-administracion.php" dialect="GenericSQL" />
   </component>
 </project>

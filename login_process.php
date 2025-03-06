@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         session_start();
         $_SESSION['usuario'] = $user['usuario'];
         $_SESSION['idUser'] = $user['idUser'];
+        $_SESSION['rol'] = $user['rol'];
         $response['success'] = true;
     } else {
         $response['error'] = "Usuario o contraseña incorrectos.";

@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57666034-78dd-4f37-af6c-856f0b44a283" name="Changes" comment="index, login, register y noticias funcionan, falta que funcione perfil por el momento">
+    <list default="true" id="57666034-78dd-4f37-af6c-856f0b44a283" name="Changes" comment="perfil y citaciones funciona todo">
       <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create_news.php" beforeDir="false" afterPath="$PROJECT_DIR$/create_news.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/noticias.php" beforeDir="false" afterPath="$PROJECT_DIR$/noticias.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/perfil.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login_process.php" beforeDir="false" afterPath="$PROJECT_DIR$/login_process.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +119,7 @@
       <workItem from="1740659383451" duration="2577000" />
       <workItem from="1740731017177" duration="8119000" />
       <workItem from="1741257899883" duration="114000" />
-      <workItem from="1741258175470" duration="3921000" />
+      <workItem from="1741258175470" duration="6130000" />
     </task>
     <task id="LOCAL-00001" summary="index, login, register y noticias funcionan, falta que funcione perfil por el momento">
       <option name="closed" value="true" />
@@ -134,7 +129,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741258677748</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="perfil y citaciones funciona todo">
+      <option name="closed" value="true" />
+      <created>1741262269230</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1741262269230</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +145,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="index, login, register y noticias funcionan, falta que funcione perfil por el momento" />
-    <option name="LAST_COMMIT_MESSAGE" value="index, login, register y noticias funcionan, falta que funcione perfil por el momento" />
+    <MESSAGE value="perfil y citaciones funciona todo" />
+    <option name="LAST_COMMIT_MESSAGE" value="perfil y citaciones funciona todo" />
   </component>
 </project>
