@@ -20,7 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
     $rol = $_POST['rol'];
 
-    // Validations
     if (!preg_match("/^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]+$/", $nombre)) {
         $error = "El nombre solo puede contener letras y espacios.";
     } elseif (!preg_match("/^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]+$/", $apellidos)) {
@@ -40,11 +39,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($checkEmail->num_rows > 0 || $checkUser->num_rows > 0) {
             $error = "El email o el nombre de usuario ya están registrados.";
         } else {
-            $conn->query("INSERT INTO users_data (nombre, apellidos, email, telefono, fecha_nacimiento, direccion, sexo) VALUES ('$nombre', '$apellidos', '$email', '$telefono', '$fecha_nacimiento', '$direccion', '$sexo')");
-            $idUser = $conn->insert_id;
+            $conn->begin_transaction();
+            try {
+                $conn->query("INSERT INTO users_data (nombre, apellidos, email, telefono, fecha_nacimiento, direccion, sexo) VALUES ('$nombre', '$apellidos', '$email', '$telefono', '$fecha_nacimiento', '$direccion', '$sexo')");
+                $idUser = $conn->insert_id;
 
-            $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-            $conn->query("INSERT INTO users_login (idUser, usuario, password, rol) VALUES ('$idUser', '$usuario', '$hashedPassword', '$rol')");
+                $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+                $conn->query("INSERT INTO users_login (idUser, usuario, password, rol) VALUES ('$idUser', '$usuario', '$hashedPassword', '$rol')");
+
+                $conn->commit();
+            } catch (Exception $e) {
+                $conn->rollback();
+                $error = "Error al crear el usuario: " . $e->getMessage();
+            }
         }
     }
 }
@@ -84,7 +91,7 @@ $result = $conn->query("SELECT * FROM users_login");
             </select>
             <button type="submit" name="create">Crear Usuario</button>
             <?php if (isset($error)): ?>
-                <p class="error"><?php echo $error; ?></p>
+                <script>alert('<?php echo $error; ?>');</script>
             <?php endif; ?>
         </form>
 
