@@ -13,9 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fecha_cita = $_POST['fecha_cita'];
     $motivo_cita = $_POST['motivo_cita'];
 
-    // Validation for date
     if (strtotime($fecha_cita) <= strtotime(date('Y-m-d'))) {
         $error = "La fecha de la cita debe ser posterior a hoy.";
+        echo "<script>alert('$error');</script>";
     } else {
         if (isset($_POST['create'])) {
             $conn->query("INSERT INTO citas (idUser, fecha_cita, motivo_cita) VALUES ('$idUser', '$fecha_cita', '$motivo_cita')");
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $users = $conn->query("SELECT idUser, usuario FROM users_login");
-$citas = $conn->query("SELECT c.idCita, c.fecha_cita, c.motivo_cita, u.usuario FROM citas c JOIN users_login u ON c.idUser = u.idUser");
+$citas = $conn->query("SELECT c.idCita, c.fecha_cita, c.motivo_cita, u.usuario, c.idUser FROM citas c JOIN users_login u ON c.idUser = u.idUser");
 ?>
 
 <?php include("header.php"); ?>
@@ -55,9 +55,6 @@ $citas = $conn->query("SELECT c.idCita, c.fecha_cita, c.motivo_cita, u.usuario F
             <input type="date" name="fecha_cita" placeholder="Fecha de la Cita" required>
             <textarea name="motivo_cita" placeholder="Motivo de la Cita" required></textarea>
             <button type="submit" name="create">Crear Cita</button>
-            <?php if (isset($error)): ?>
-                <p class="error"><?php echo $error; ?></p>
-            <?php endif; ?>
         </form>
 
         <h2>Citas Existentes</h2>
@@ -78,6 +75,7 @@ $citas = $conn->query("SELECT c.idCita, c.fecha_cita, c.motivo_cita, u.usuario F
                     <td>
                         <form action="citas-administracion.php" method="POST" style="display:inline;">
                             <input type="hidden" name="idCita" value="<?php echo $cita['idCita']; ?>">
+                            <input type="hidden" name="idUser" value="<?php echo $cita['idUser']; ?>">
                             <input type="date" name="fecha_cita" value="<?php echo $cita['fecha_cita']; ?>" required>
                             <textarea name="motivo_cita" required><?php echo $cita['motivo_cita']; ?></textarea>
                             <button type="submit" name="update">Modificar</button>
