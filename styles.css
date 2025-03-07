@@ -228,7 +228,7 @@ footer {
 
 .news-item p {
     padding: 0 10px;
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #333;
 }
 
@@ -279,6 +279,7 @@ footer {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
+    margin-top: 100px;
     max-width: 400px;
 }
 
@@ -313,6 +314,7 @@ footer {
 }
 
 .register-page p {
+    font-size: 0.8rem;
     text-align: center;
 }
 
@@ -373,6 +375,7 @@ footer {
 
 .login-page p {
     text-align: center;
+    font-size: 0.8rem;
 }
 
 .login-page p a {
@@ -491,6 +494,13 @@ footer {
 
 .profile-card button:hover {
     background-color: #0e3760;
+}
+
+.error {
+    font-size: 0.8rem;
+    margin: 0 auto;
+    display: block;
+    grid-column: span 3;
 }
 
 /* citaciones */

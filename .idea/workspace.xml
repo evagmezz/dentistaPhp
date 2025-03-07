@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57666034-78dd-4f37-af6c-856f0b44a283" name="Changes" comment="trabajo acabado" />
+    <list default="true" id="57666034-78dd-4f37-af6c-856f0b44a283" name="Changes" comment="trabajo acabado">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/perfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/perfil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register_process.php" beforeDir="false" afterPath="$PROJECT_DIR$/register_process.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuarios-administracion.php" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios-administracion.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,18 +26,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "evagmezz"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;evagmezz&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/evagmezz/dentistaPhp.git",
-    "accountId": "8bac347a-0b6b-40ad-9228-e0e91f0f252b"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/evagmezz/dentistaPhp.git&quot;,
+    &quot;accountId&quot;: &quot;8bac347a-0b6b-40ad-9228-e0e91f0f252b&quot;
   }
-}]]></component>
+}</component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -113,7 +122,8 @@
       <workItem from="1740659383451" duration="2577000" />
       <workItem from="1740731017177" duration="8119000" />
       <workItem from="1741257899883" duration="114000" />
-      <workItem from="1741258175470" duration="8290000" />
+      <workItem from="1741258175470" duration="9748000" />
+      <workItem from="1741360948211" duration="1550000" />
     </task>
     <task id="LOCAL-00001" summary="index, login, register y noticias funcionan, falta que funcione perfil por el momento">
       <option name="closed" value="true" />
@@ -155,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741266308102</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="trabajo acabado">
+      <option name="closed" value="true" />
+      <created>1741266652886</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1741266652886</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

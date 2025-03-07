@@ -9,22 +9,23 @@ if ($_SESSION['rol'] != 'admin') {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['create'])) {
-        $idUser = $_POST['idUser'];
-        $fecha_cita = $_POST['fecha_cita'];
-        $motivo_cita = $_POST['motivo_cita'];
+    $idUser = $_POST['idUser'];
+    $fecha_cita = $_POST['fecha_cita'];
+    $motivo_cita = $_POST['motivo_cita'];
 
-        $conn->query("INSERT INTO citas (idUser, fecha_cita, motivo_cita) VALUES ('$idUser', '$fecha_cita', '$motivo_cita')");
-    } elseif (isset($_POST['update'])) {
-        $idCita = $_POST['idCita'];
-        $fecha_cita = $_POST['fecha_cita'];
-        $motivo_cita = $_POST['motivo_cita'];
-
-        $conn->query("UPDATE citas SET fecha_cita = '$fecha_cita', motivo_cita = '$motivo_cita' WHERE idCita = $idCita");
-    } elseif (isset($_POST['delete'])) {
-        $idCita = $_POST['idCita'];
-
-        $conn->query("DELETE FROM citas WHERE idCita = $idCita");
+    // Validation for date
+    if (strtotime($fecha_cita) <= strtotime(date('Y-m-d'))) {
+        $error = "La fecha de la cita debe ser posterior a hoy.";
+    } else {
+        if (isset($_POST['create'])) {
+            $conn->query("INSERT INTO citas (idUser, fecha_cita, motivo_cita) VALUES ('$idUser', '$fecha_cita', '$motivo_cita')");
+        } elseif (isset($_POST['update'])) {
+            $idCita = $_POST['idCita'];
+            $conn->query("UPDATE citas SET fecha_cita = '$fecha_cita', motivo_cita = '$motivo_cita' WHERE idCita = $idCita");
+        } elseif (isset($_POST['delete'])) {
+            $idCita = $_POST['idCita'];
+            $conn->query("DELETE FROM citas WHERE idCita = $idCita");
+        }
     }
 }
 
@@ -54,6 +55,9 @@ $citas = $conn->query("SELECT c.idCita, c.fecha_cita, c.motivo_cita, u.usuario F
             <input type="date" name="fecha_cita" placeholder="Fecha de la Cita" required>
             <textarea name="motivo_cita" placeholder="Motivo de la Cita" required></textarea>
             <button type="submit" name="create">Crear Cita</button>
+            <?php if (isset($error)): ?>
+                <p class="error"><?php echo $error; ?></p>
+            <?php endif; ?>
         </form>
 
         <h2>Citas Existentes</h2>

@@ -9,39 +9,43 @@ if ($_SESSION['rol'] != 'admin') {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['create'])) {
-        $nombre = $_POST['nombre'];
-        $apellidos = $_POST['apellidos'];
-        $email = $_POST['email'];
-        $telefono = $_POST['telefono'];
-        $fecha_nacimiento = $_POST['fecha_nacimiento'];
-        $direccion = $_POST['direccion'];
-        $sexo = $_POST['sexo'];
-        $usuario = $_POST['usuario'];
-        $password = $_POST['password'];
-        $rol = $_POST['rol'];
+    $nombre = $_POST['nombre'];
+    $apellidos = $_POST['apellidos'];
+    $email = $_POST['email'];
+    $telefono = $_POST['telefono'];
+    $fecha_nacimiento = $_POST['fecha_nacimiento'];
+    $direccion = $_POST['direccion'];
+    $sexo = $_POST['sexo'];
+    $usuario = $_POST['usuario'];
+    $password = $_POST['password'];
+    $rol = $_POST['rol'];
 
-        $conn->query("INSERT INTO users_data (nombre, apellidos, email, telefono, fecha_nacimiento, direccion, sexo) VALUES ('$nombre', '$apellidos', '$email', '$telefono', '$fecha_nacimiento', '$direccion', '$sexo')");
-        $idUser = $conn->insert_id;
+    // Validations
+    if (!preg_match("/^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]+$/", $nombre)) {
+        $error = "El nombre solo puede contener letras y espacios.";
+    } elseif (!preg_match("/^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]+$/", $apellidos)) {
+        $error = "Los apellidos solo pueden contener letras y espacios.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error = "El email no es válido.";
+    } elseif (!preg_match("/^\d{9}$/", $telefono)) {
+        $error = "El teléfono debe contener 9 números.";
+    } elseif (strtotime($fecha_nacimiento) >= strtotime(date('Y-m-d'))) {
+        $error = "La fecha de nacimiento debe ser anterior a hoy.";
+    } elseif (!preg_match("/^[a-zA-Z0-9_.]+$/", $usuario)) {
+        $error = "El nombre de usuario solo puede contener letras, números, guiones bajos y puntos.";
+    } else {
+        $checkEmail = $conn->query("SELECT * FROM users_data WHERE email='$email'");
+        $checkUser = $conn->query("SELECT * FROM users_login WHERE usuario='$usuario'");
 
-        $conn->query("INSERT INTO users_login (idUser, usuario, password, rol) VALUES ('$idUser', '$usuario', '$password', '$rol')");
-    } elseif (isset($_POST['update'])) {
-        $id = $_POST['id'];
-        $usuario = $_POST['usuario'];
-        $password = $_POST['password'];
-        $rol = $_POST['rol'];
-
-        if (!empty($password)) {
-            $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-            $conn->query("UPDATE users_login SET usuario = '$usuario', password = '$hashedPassword', rol = '$rol' WHERE idUser = $id");
+        if ($checkEmail->num_rows > 0 || $checkUser->num_rows > 0) {
+            $error = "El email o el nombre de usuario ya están registrados.";
         } else {
-            $conn->query("UPDATE users_login SET usuario = '$usuario', rol = '$rol' WHERE idUser = $id");
-        }
-    } elseif (isset($_POST['delete'])) {
-        $id = $_POST['id'];
+            $conn->query("INSERT INTO users_data (nombre, apellidos, email, telefono, fecha_nacimiento, direccion, sexo) VALUES ('$nombre', '$apellidos', '$email', '$telefono', '$fecha_nacimiento', '$direccion', '$sexo')");
+            $idUser = $conn->insert_id;
 
-        $conn->query("DELETE FROM users_login WHERE idUser = $id");
-        $conn->query("DELETE FROM users_data WHERE idUser = $id");
+            $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+            $conn->query("INSERT INTO users_login (idUser, usuario, password, rol) VALUES ('$idUser', '$usuario', '$hashedPassword', '$rol')");
+        }
     }
 }
 
@@ -79,6 +83,9 @@ $result = $conn->query("SELECT * FROM users_login");
                 <option value="admin">Admin</option>
             </select>
             <button type="submit" name="create">Crear Usuario</button>
+            <?php if (isset($error)): ?>
+                <p class="error"><?php echo $error; ?></p>
+            <?php endif; ?>
         </form>
 
         <h2>Usuarios Existentes</h2>

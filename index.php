@@ -9,9 +9,6 @@ $result = $conn->query("SELECT titulo, imagen, texto, fecha FROM noticias ORDER 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript">
-        window.location.href = "index.php";
-    </script>
     <title>Inicio - Clínica Dental</title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css">
